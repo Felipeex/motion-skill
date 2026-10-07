@@ -1,15 +1,15 @@
 ---
 name: motion
-description: Cria qualquer vídeo em motion design (canvas + Web Audio → MP4), em qualquer formato (9:16, 4:5, 1:1, 16:9), com ou sem narração, para qualquer marca ou assunto. Use quando pedirem "motion", "vídeo animado", "animação", "vinheta", "intro", "explicativo animado" ou "texto animado" que não seja o anúncio da Gestify (para esse, use motion-anuncio).
+description: Cria qualquer vídeo em motion design (canvas + Web Audio → MP4), em qualquer formato (9:16, 4:5, 1:1, 16:9), com ou sem narração, para qualquer marca ou assunto. Use quando pedirem "motion", "vídeo animado", "animação", "vinheta", "intro", "explicativo animado" ou "texto animado".
 ---
 
 # Motion genérico (canvas + Web Audio → MP4)
 
-A técnica é a mesma do `motion-anuncio`, mas sem amarrar formato, marca, nicho ou narração.
-O motor pronto e testado está em `criativos/higienizador/video/`: **copie a pasta** para
-onde o usuário quiser (padrão: `criativos/<nome>/video/`), apague o que é do higienizador
-(`assets/`, `voice.wav`, `timings.json`, `words.json`, o MP4) e reescreva as cenas do
-`video.html`. Não comece do zero: o exportador, o servidor local e o `buildAudio` já funcionam.
+Um vídeo, sem amarrar formato, marca, nicho ou narração. Se o projeto já tiver um vídeo feito
+com esta skill, **copie a pasta dele** para `videos/<nome>/` (ou onde o usuário quiser), apague o
+que é do vídeo antigo (`assets/`, `voice.wav`, `timings.json`, `words.json`, o MP4) e reescreva as
+cenas do `video.html`: o exportador, o servidor local e o `buildAudio` já funcionam. Se não houver,
+crie os arquivos abaixo nessa pasta.
 
 | Arquivo | O que faz |
 |---|---|
@@ -26,7 +26,7 @@ Precisa de: Chrome em `C:/Program Files/Google/Chrome/...` (ou `CHROME=`), ffmpe
 - **Nome da saída**: `OUT` no `export.mjs` (`video-<nome>.mp4`) e o prefixo do `--user-data-dir`.
 - **Duração**: `TOTAL`. Com narração, é a duração da voz cortada; sem narração, combine com o usuário (vinheta 3–6s, intro 5–10s, explicativo 30–90s).
 - **Sem narração**: tire o carregamento de `voice.wav` e o ducking da música no `buildAudio`; a trilha fica no volume cheio (≈0,6–0,75). Sem som nenhum: pule o `renderAudioWav` e exporte só o vídeo (`-an`).
-- **Visual**: cores e fontes vêm da marca do usuário (pergunte ou leia do projeto). Defina tudo como constantes no topo (`COLORS`, `FONTS`); nada de cor solta no meio das cenas. Só use o tema da landing da Gestify se o vídeo for da Gestify.
+- **Visual**: cores e fontes vêm da marca do usuário (pergunte ou leia do projeto). Defina tudo como constantes no topo (`COLORS`, `FONTS`); nada de cor solta no meio das cenas.
 - **Zonas seguras**: 9:16 → conteúdo entre y≈200 e y≈1600 e 90px nas laterais (interface do Reels). 4:5 e 1:1 → 60px de margem. 16:9 → 5% de margem (title safe).
 
 ## Fluxo com o usuário (fale simples)
@@ -62,7 +62,7 @@ Precisa de: Chrome em `C:/Program Files/Google/Chrome/...` (ou `CHROME=`), ffmpe
 ## Exportar e revisar
 
 ```sh
-cd criativos/<nome>/video
+cd videos/<nome>
 node export.mjs --quadros 0,2,5,9   # fotos em review/
 node export.mjs                     # MP4
 ```

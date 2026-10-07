@@ -24,7 +24,7 @@ A [Claude Code](https://claude.com/claude-code) skill for creating **motion desi
 | `export.mjs` | Headless Chrome draws each frame → ffmpeg → MP4. `--quadros 0.2,9.5,…` only captures review stills |
 | `assets/` | Images used by the video (logo, screenshots, photos) |
 
-> **Note:** this repository contains only the skill instructions (`SKILL.md`). The skill expects a working engine (the files above) at `criativos/higienizador/video/` inside your project, which it copies and adapts for each new video.
+> **Note:** this repository contains only the skill instructions (`SKILL.md`). If your project already has a video made with this skill, it copies that folder and adapts it; otherwise it creates the files above in `videos/<name>/`.
 
 ### Requirements
 
@@ -53,7 +53,7 @@ Ask Claude Code for things like *"make a motion video"*, *"animated intro"*, *"v
 3. Send review stills, then deliver the final MP4
 
 ```sh
-cd criativos/<name>/video
+cd videos/<name>
 node export.mjs --quadros 0,2,5,9   # stills in review/
 node export.mjs                     # MP4
 ```
@@ -82,7 +82,7 @@ Uma skill do [Claude Code](https://claude.com/claude-code) para criar **vídeos 
 | `export.mjs` | Chrome sem janela desenha cada quadro → ffmpeg → MP4. `--quadros 0.2,9.5,…` só tira fotos para revisar |
 | `assets/` | Imagens que o vídeo usa (logo, prints, fotos) |
 
-> **Observação:** este repositório contém só as instruções da skill (`SKILL.md`). A skill espera um motor pronto (os arquivos acima) em `criativos/higienizador/video/` dentro do seu projeto, que ela copia e adapta para cada vídeo novo.
+> **Observação:** este repositório contém só as instruções da skill (`SKILL.md`). Se o seu projeto já tiver um vídeo feito com esta skill, ela copia essa pasta e adapta; senão, cria os arquivos acima em `videos/<nome>/`.
 
 ### Requisitos
 
@@ -111,7 +111,7 @@ Peça ao Claude Code coisas como *"faz um motion"*, *"vídeo animado"*, *"vinhet
 3. Mandar fotos de revisão e depois entregar o MP4
 
 ```sh
-cd criativos/<nome>/video
+cd videos/<nome>
 node export.mjs --quadros 0,2,5,9   # fotos em review/
 node export.mjs                     # MP4
 ```
