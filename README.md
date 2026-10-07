@@ -177,3 +177,15 @@ cd videos/<nome>
 node export.mjs --quadros 0,2,5,9   # fotos em review/
 node export.mjs                     # MP4
 ```
+
+---
+
+## Star History
+
+<a href="https://star-history.com/#Felipeex/motion-skill&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=felipeex%2Fmotion-skill&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=felipeex%2Fmotion-skill&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=felipeex%2Fmotion-skill&type=Date" />
+  </picture>
+</a>
