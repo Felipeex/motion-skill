@@ -15,6 +15,14 @@ An [Agent Skill](https://agentskills.io) for creating **motion design videos** o
 - Deterministic rendering: `render(t)` always produces the same frame for the same `t`
 - Review frames before export, then validate the MP4 (`ffprobe`, `ebur128` ≈ -14 LUFS)
 
+### Examples
+
+| Upholstery cleaning ad | SaaS ad | Solar panel cleaning ad |
+|:---:|:---:|:---:|
+| <a href="https://github.com/Felipeex/motion-skill/releases/download/examples/upholstery-cleaning.mp4"><img src="examples/upholstery-cleaning.gif" width="240" alt="Upholstery cleaning ad"></a> | <a href="https://github.com/Felipeex/motion-skill/releases/download/examples/saas-ad.mp4"><img src="examples/saas-ad.gif" width="240" alt="SaaS ad"></a> | <a href="https://github.com/Felipeex/motion-skill/releases/download/examples/solar-panel-cleaning.mp4"><img src="examples/solar-panel-cleaning.gif" width="240" alt="Solar panel cleaning ad"></a> |
+
+Click a preview to watch the full MP4 with sound (9:16, ~35s, in Portuguese).
+
 ### How it works
 
 | File | Role |
@@ -95,6 +103,14 @@ Uma [Agent Skill](https://agentskills.io) para criar **vídeos em motion design*
 - Trilha e efeitos sonoros sintetizados (whoosh, pop, tic) com Web Audio
 - Renderização determinística: `render(t)` gera sempre o mesmo quadro para o mesmo `t`
 - Fotos de revisão antes de exportar e validação do MP4 (`ffprobe`, `ebur128` ≈ -14 LUFS)
+
+### Exemplos
+
+| Anúncio de higienização de sofá | Anúncio de SaaS | Anúncio de limpeza de placas solares |
+|:---:|:---:|:---:|
+| <a href="https://github.com/Felipeex/motion-skill/releases/download/examples/upholstery-cleaning.mp4"><img src="examples/upholstery-cleaning.gif" width="240" alt="Anúncio de higienização de sofá"></a> | <a href="https://github.com/Felipeex/motion-skill/releases/download/examples/saas-ad.mp4"><img src="examples/saas-ad.gif" width="240" alt="Anúncio de SaaS"></a> | <a href="https://github.com/Felipeex/motion-skill/releases/download/examples/solar-panel-cleaning.mp4"><img src="examples/solar-panel-cleaning.gif" width="240" alt="Anúncio de limpeza de placas solares"></a> |
+
+Clique numa prévia para ver o MP4 completo com som (9:16, ~35s).
 
 ### Como funciona
 
