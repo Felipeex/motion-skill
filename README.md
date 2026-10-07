@@ -44,7 +44,18 @@ A [Claude Code](https://claude.com/claude-code) skill for creating **motion desi
 
 ### Installation
 
-Copy the skill into your Claude Code skills folder:
+Install with the [skills.sh](https://skills.sh) CLI (works with Claude Code and other agents):
+
+```sh
+# in the current project
+npx skills add Felipeex/motion-skill
+
+# or for all your projects (user-level)
+npx skills add Felipeex/motion-skill -g
+```
+
+<details>
+<summary>Manual install (git clone)</summary>
 
 ```sh
 # personal (all projects)
@@ -53,6 +64,8 @@ git clone https://github.com/Felipeex/motion-skill ~/.claude/skills/motion
 # or per project
 git clone https://github.com/Felipeex/motion-skill .claude/skills/motion
 ```
+
+</details>
 
 ### Usage
 
@@ -112,7 +125,18 @@ Uma skill do [Claude Code](https://claude.com/claude-code) para criar **vídeos 
 
 ### Instalação
 
-Copie a skill para a pasta de skills do Claude Code:
+Instale com a CLI do [skills.sh](https://skills.sh) (funciona no Claude Code e em outros agentes):
+
+```sh
+# no projeto atual
+npx skills add Felipeex/motion-skill
+
+# ou para todos os seus projetos (nível de usuário)
+npx skills add Felipeex/motion-skill -g
+```
+
+<details>
+<summary>Instalação manual (git clone)</summary>
 
 ```sh
 # pessoal (todos os projetos)
@@ -121,6 +145,8 @@ git clone https://github.com/Felipeex/motion-skill ~/.claude/skills/motion
 # ou por projeto
 git clone https://github.com/Felipeex/motion-skill .claude/skills/motion
 ```
+
+</details>
 
 ### Uso
 
