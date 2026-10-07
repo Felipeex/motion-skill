@@ -19,9 +19,9 @@ A [Claude Code](https://claude.com/claude-code) skill for creating **motion desi
 
 | File | Role |
 |---|---|
-| `cortar-audio.mjs` | (Voice-over only) trims silences → normalized `voz.wav` + `tempos.json` |
+| `trim-audio.mjs` | (Voice-over only) trims silences → normalized `voice.wav` + `timings.json` |
 | `video.html` | The animation: `render(t)` on a canvas + music/effects in Web Audio. Opens in Chrome as a live preview |
-| `exportar.mjs` | Headless Chrome draws each frame → ffmpeg → MP4. `--quadros 0.2,9.5,…` only captures review stills |
+| `export.mjs` | Headless Chrome draws each frame → ffmpeg → MP4. `--quadros 0.2,9.5,…` only captures review stills |
 | `assets/` | Images used by the video (logo, screenshots, photos) |
 
 > **Note:** this repository contains only the skill instructions (`SKILL.md`). The skill expects a working engine (the files above) at `criativos/higienizador/video/` inside your project, which it copies and adapts for each new video.
@@ -54,8 +54,8 @@ Ask Claude Code for things like *"make a motion video"*, *"animated intro"*, *"v
 
 ```sh
 cd criativos/<name>/video
-node exportar.mjs --quadros 0,2,5,9   # stills in revisao/
-node exportar.mjs                     # MP4
+node export.mjs --quadros 0,2,5,9   # stills in review/
+node export.mjs                     # MP4
 ```
 
 > The skill instructions (`SKILL.md`) are written in Brazilian Portuguese.
@@ -77,9 +77,9 @@ Uma skill do [Claude Code](https://claude.com/claude-code) para criar **vídeos 
 
 | Arquivo | O que faz |
 |---|---|
-| `cortar-audio.mjs` | (Só com narração) tira os silêncios → `voz.wav` normalizada + `tempos.json` |
+| `trim-audio.mjs` | (Só com narração) tira os silêncios → `voice.wav` normalizada + `timings.json` |
 | `video.html` | A animação: `render(t)` num canvas + trilha/efeitos em Web Audio. Aberto no Chrome, vira prévia com som |
-| `exportar.mjs` | Chrome sem janela desenha cada quadro → ffmpeg → MP4. `--quadros 0.2,9.5,…` só tira fotos para revisar |
+| `export.mjs` | Chrome sem janela desenha cada quadro → ffmpeg → MP4. `--quadros 0.2,9.5,…` só tira fotos para revisar |
 | `assets/` | Imagens que o vídeo usa (logo, prints, fotos) |
 
 > **Observação:** este repositório contém só as instruções da skill (`SKILL.md`). A skill espera um motor pronto (os arquivos acima) em `criativos/higienizador/video/` dentro do seu projeto, que ela copia e adapta para cada vídeo novo.
@@ -112,6 +112,6 @@ Peça ao Claude Code coisas como *"faz um motion"*, *"vídeo animado"*, *"vinhet
 
 ```sh
 cd criativos/<nome>/video
-node exportar.mjs --quadros 0,2,5,9   # fotos em revisao/
-node exportar.mjs                     # MP4
+node export.mjs --quadros 0,2,5,9   # fotos em review/
+node export.mjs                     # MP4
 ```
