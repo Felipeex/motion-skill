@@ -32,6 +32,16 @@ A [Claude Code](https://claude.com/claude-code) skill for creating **motion desi
 - `ffmpeg` on the `PATH`
 - Node.js 24 — no `npm install` needed
 
+### What you'll need for each video
+
+- **Where it will be posted**: defines the format (9:16, 4:5, 1:1 or 16:9)
+- **The message**: the text or script, and the call to action at the end
+- **Brand**: colors, fonts and logo (as an image file); if they're already in the project, the skill reads them from there
+- **Images** (optional): screenshots, photos or product shots to show in the video
+- **Voice-over** (optional): a recording of the narration (any audio file) and an OpenAI API key to time each word with Whisper, passed only as an environment variable, never saved
+- **No voice-over**: the desired duration (vignette 3–6s, intro 5–10s, explainer 30–90s)
+- **Real data only**: numbers, results and testimonials must come from you; the skill never makes them up
+
 ### Installation
 
 Copy the skill into your Claude Code skills folder:
@@ -89,6 +99,16 @@ Uma skill do [Claude Code](https://claude.com/claude-code) para criar **vídeos 
 - Chrome (caminho padrão `C:/Program Files/Google/Chrome/...`, ou defina `CHROME=`)
 - `ffmpeg` no `PATH`
 - Node.js 24 — sem `npm install`
+
+### O que você precisa para cada vídeo
+
+- **Onde vai ser postado**: define o formato (9:16, 4:5, 1:1 ou 16:9)
+- **A mensagem**: o texto ou roteiro e a chamada final
+- **Marca**: cores, fontes e logo (em arquivo de imagem); se já estiverem no projeto, a skill lê de lá
+- **Imagens** (opcional): prints, fotos ou imagens do produto para aparecer no vídeo
+- **Narração** (opcional): a gravação da fala (qualquer arquivo de áudio) e uma chave da API da OpenAI para marcar o tempo de cada palavra com o Whisper, passada só por variável de ambiente, nunca salva
+- **Sem narração**: a duração desejada (vinheta 3–6s, intro 5–10s, explicativo 30–90s)
+- **Só dados reais**: números, resultados e depoimentos precisam vir de você; a skill nunca inventa
 
 ### Instalação
 
