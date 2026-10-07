@@ -1,4 +1,4 @@
-# motion — Claude Code skill
+# motion — Agent Skill
 
 [English](#english) · [Português (BR)](#português-br)
 
@@ -6,7 +6,7 @@
 
 ## English
 
-A [Claude Code](https://claude.com/claude-code) skill for creating **motion design videos** of any kind — vignettes, intros, animated explainers, kinetic text — rendered with **canvas + Web Audio** and exported to **MP4**.
+An [Agent Skill](https://agentskills.io) for creating **motion design videos** of any kind — vignettes, intros, animated explainers, kinetic text — rendered with **canvas + Web Audio** and exported to **MP4**.
 
 - Any format: 9:16 (Reels/Stories/Shorts), 4:5, 1:1, 16:9
 - With or without voice-over (silence trimming, loudness normalization, word-level timing via Whisper)
@@ -44,7 +44,7 @@ A [Claude Code](https://claude.com/claude-code) skill for creating **motion desi
 
 ### Installation
 
-Install with the [skills.sh](https://skills.sh) CLI (works with Claude Code and other agents):
+Install with the [skills.sh](https://skills.sh) CLI (works with Claude Code, Codex, Cursor, Gemini CLI and other agents):
 
 ```sh
 # in the current project
@@ -69,7 +69,7 @@ git clone https://github.com/Felipeex/motion-skill .claude/skills/motion
 
 ### Usage
 
-Ask Claude Code for things like *"make a motion video"*, *"animated intro"*, *"vignette"*, *"animated explainer"*, or *"kinetic text"*. The skill will:
+Ask your agent for things like *"make a motion video"*, *"animated intro"*, *"vignette"*, *"animated explainer"*, or *"kinetic text"*. The skill will:
 
 1. Ask up to 6 short questions (format, voice-over, duration, style, brand, sound/CTA)
 2. Propose a script table (time | line or text | what appears) and wait for your approval
@@ -87,7 +87,7 @@ node export.mjs                     # MP4
 
 ## Português (BR)
 
-Uma skill do [Claude Code](https://claude.com/claude-code) para criar **vídeos em motion design** de qualquer tipo — vinhetas, intros, explicativos animados, texto animado — renderizados com **canvas + Web Audio** e exportados em **MP4**.
+Uma [Agent Skill](https://agentskills.io) para criar **vídeos em motion design** de qualquer tipo — vinhetas, intros, explicativos animados, texto animado — renderizados com **canvas + Web Audio** e exportados em **MP4**.
 
 - Qualquer formato: 9:16 (Reels/Stories/Shorts), 4:5, 1:1, 16:9
 - Com ou sem narração (corte de silêncios, normalização de volume, tempo de cada palavra via Whisper)
@@ -125,7 +125,7 @@ Uma skill do [Claude Code](https://claude.com/claude-code) para criar **vídeos 
 
 ### Instalação
 
-Instale com a CLI do [skills.sh](https://skills.sh) (funciona no Claude Code e em outros agentes):
+Instale com a CLI do [skills.sh](https://skills.sh) (funciona no Claude Code, Codex, Cursor, Gemini CLI e outros agentes):
 
 ```sh
 # no projeto atual
@@ -150,7 +150,7 @@ git clone https://github.com/Felipeex/motion-skill .claude/skills/motion
 
 ### Uso
 
-Peça ao Claude Code coisas como *"faz um motion"*, *"vídeo animado"*, *"vinheta"*, *"intro"*, *"explicativo animado"* ou *"texto animado"*. A skill vai:
+Peça ao seu agente coisas como *"faz um motion"*, *"vídeo animado"*, *"vinheta"*, *"intro"*, *"explicativo animado"* ou *"texto animado"*. A skill vai:
 
 1. Fazer no máximo 6 perguntas curtas (formato, narração, duração, estilo, marca, som/chamada final)
 2. Propor um roteiro em tabela (tempo | fala ou texto | o que aparece) e esperar o seu ok

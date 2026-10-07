@@ -31,7 +31,7 @@ Precisa de: Chrome em `C:/Program Files/Google/Chrome/...` (ou `CHROME=`), ffmpe
 
 ## Fluxo com o usuário (fale simples)
 
-1. **Perguntas, no máximo 6, uma por vez** (AskUserQuestion, 3 opções, a recomendada primeiro). Pergunte só o que não dá para descobrir: formato/onde vai ser postado, tem narração?, duração (se não houver voz), estilo, marca/cores (se não estiverem no projeto), som e chamada final.
+1. **Perguntas, no máximo 6, uma por vez** (com a ferramenta de perguntas do agente, se houver, como o AskUserQuestion; 3 opções, a recomendada primeiro). Pergunte só o que não dá para descobrir: formato/onde vai ser postado, tem narração?, duração (se não houver voz), estilo, marca/cores (se não estiverem no projeto), som e chamada final.
 2. **Roteiro em tabela** (tempo | fala ou texto | o que aparece). **Espere o ok** antes de desenhar.
 3. Mande fotos de revisão, depois entregue o MP4.
 
