@@ -9,7 +9,7 @@
 An [Agent Skill](https://agentskills.io) for creating **motion design videos** of any kind — vignettes, intros, animated explainers, kinetic text — rendered with **canvas + Web Audio** and exported to **MP4**.
 
 - Any format: 9:16 (Reels/Stories/Shorts), 4:5, 1:1, 16:9
-- With or without voice-over (silence trimming, loudness normalization, word-level timing via Whisper)
+- With or without voice-over (silence trimming, loudness normalization, word-level timing with whisper.cpp running locally, or OpenAI Whisper)
 - Any brand or subject: colors and fonts come from the user's brand
 - Synthesized soundtrack and sound effects (whooshes, pops, ticks) through Web Audio
 - Deterministic rendering: `render(t)` always produces the same frame for the same `t`
@@ -39,6 +39,7 @@ Click a preview to watch the full MP4 with sound (9:16, ~35s, in Portuguese).
 - Chrome (default path `C:/Program Files/Google/Chrome/...`, or set `CHROME=`)
 - `ffmpeg` on the `PATH`
 - Node.js 24 — no `npm install` needed
+- With voice-over: [whisper.cpp](https://github.com/ggml-org/whisper.cpp) and a model (~490 MB), downloaded once on the first narrated video
 
 ### What you'll need for each video
 
@@ -46,7 +47,7 @@ Click a preview to watch the full MP4 with sound (9:16, ~35s, in Portuguese).
 - **The message**: the text or script, and the call to action at the end
 - **Brand**: colors, fonts and logo (as an image file); if they're already in the project, the skill reads them from there
 - **Images** (optional): screenshots, photos or product shots to show in the video
-- **Voice-over** (optional): a recording of the narration (any audio file) and an OpenAI API key to time each word with Whisper, passed only as an environment variable, never saved
+- **Voice-over** (optional): a recording of the narration (any audio file). Each word is timed locally with whisper.cpp, no API key. If you prefer OpenAI Whisper, pass an API key only as an environment variable; it is never saved
 - **No voice-over**: the desired duration (vignette 3–6s, intro 5–10s, explainer 30–90s)
 - **Real data only**: numbers, results and testimonials must come from you; the skill never makes them up
 
@@ -98,7 +99,7 @@ node export.mjs                     # MP4
 Uma [Agent Skill](https://agentskills.io) para criar **vídeos em motion design** de qualquer tipo — vinhetas, intros, explicativos animados, texto animado — renderizados com **canvas + Web Audio** e exportados em **MP4**.
 
 - Qualquer formato: 9:16 (Reels/Stories/Shorts), 4:5, 1:1, 16:9
-- Com ou sem narração (corte de silêncios, normalização de volume, tempo de cada palavra via Whisper)
+- Com ou sem narração (corte de silêncios, normalização de volume, tempo de cada palavra com o whisper.cpp rodando local, ou o Whisper da OpenAI)
 - Qualquer marca ou assunto: cores e fontes vêm da marca do usuário
 - Trilha e efeitos sonoros sintetizados (whoosh, pop, tic) com Web Audio
 - Renderização determinística: `render(t)` gera sempre o mesmo quadro para o mesmo `t`
@@ -128,6 +129,7 @@ Clique numa prévia para ver o MP4 completo com som (9:16, ~35s).
 - Chrome (caminho padrão `C:/Program Files/Google/Chrome/...`, ou defina `CHROME=`)
 - `ffmpeg` no `PATH`
 - Node.js 24 — sem `npm install`
+- Com narração: o [whisper.cpp](https://github.com/ggml-org/whisper.cpp) e um modelo (~490 MB), baixados uma vez no primeiro vídeo narrado
 
 ### O que você precisa para cada vídeo
 
@@ -135,7 +137,7 @@ Clique numa prévia para ver o MP4 completo com som (9:16, ~35s).
 - **A mensagem**: o texto ou roteiro e a chamada final
 - **Marca**: cores, fontes e logo (em arquivo de imagem); se já estiverem no projeto, a skill lê de lá
 - **Imagens** (opcional): prints, fotos ou imagens do produto para aparecer no vídeo
-- **Narração** (opcional): a gravação da fala (qualquer arquivo de áudio) e uma chave da API da OpenAI para marcar o tempo de cada palavra com o Whisper, passada só por variável de ambiente, nunca salva
+- **Narração** (opcional): a gravação da fala (qualquer arquivo de áudio). O tempo de cada palavra sai local, com o whisper.cpp, sem chave. Se preferir o Whisper da OpenAI, passe a chave só por variável de ambiente; ela nunca é salva
 - **Sem narração**: a duração desejada (vinheta 3–6s, intro 5–10s, explicativo 30–90s)
 - **Só dados reais**: números, resultados e depoimentos precisam vir de você; a skill nunca inventa
 

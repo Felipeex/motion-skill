@@ -18,7 +18,7 @@ crie os arquivos abaixo nessa pasta.
 | `export.mjs` | Chrome sem janela desenha cada quadro → ffmpeg → MP4. `--quadros 0.2,9.5,…` só tira fotos para revisar |
 | `assets/` | Imagens que o vídeo usa (logo, prints, fotos) |
 
-Precisa de: Chrome em `C:/Program Files/Google/Chrome/...` (ou `CHROME=`), ffmpeg no PATH, Node 24. Sem npm install.
+Precisa de: Chrome em `C:/Program Files/Google/Chrome/...` (ou `CHROME=`), ffmpeg no PATH, Node 24. Com narração, o whisper.cpp (baixado na primeira vez, veja Áudio). Sem npm install.
 
 ## O que adaptar ao copiar
 
@@ -38,7 +38,13 @@ Precisa de: Chrome em `C:/Program Files/Google/Chrome/...` (ou `CHROME=`), ffmpe
 ## Áudio (quando houver narração)
 
 - `node trim-audio.mjs "<gravação>"`: silencedetect a -35dB/0,25s, folgas de 0,08s/0,14s e `loudnorm`. Confira a média da voz perto de -19 dB (`volumedetect`).
-- **Tempo de cada palavra**: Whisper (`whisper-1`, `verbose_json`, `timestamp_granularities[]=word`, idioma certo) com a chave que o usuário der, **só por variável de ambiente**, nunca salva. Palavras rápidas às vezes vêm no mesmo tempo: espalhe à mão.
+- **Tempo de cada palavra**, sempre na `voice.wav` já cortada, salvo em `words.json` como `[{ "word", "start", "end" }]` (segundos):
+  - **Padrão: whisper.cpp** (local, sem chave). Baixe uma vez para `~/.cache/motion-whisper/`:
+    - `whisper-cli`: das releases `b*` de github.com/ggml-org/whisper.cpp/releases (as `v*` vêm sem binários). Windows: `whisper-bin-x64.zip` (com GPU NVIDIA, `whisper-bin-win-cuda-12.4.0-x64.zip`); Linux: `whisper-bin-ubuntu-x64.tar.gz`; Mac: `brew install whisper-cpp`.
+    - Modelo: `ggml-small.bin` (~490 MB) de huggingface.co/ggerganov/whisper.cpp; `ggml-large-v3-turbo.bin` (~1,6 GB) erra menos.
+    - `ffmpeg -i voice.wav -ar 16000 -ac 1 voice16k.wav` e `whisper-cli -m ggml-small.bin -f voice16k.wav -l pt -ml 1 -sow -oj -of whisper -np` (`-l` = idioma da fala): sai `whisper.json` com uma palavra por item em `transcription` (`text`, `offsets.from/to` em ms). Converta para o `words.json`. Em CPU leva mais ou menos a duração do áudio.
+  - **Opção: Whisper da OpenAI**, se o usuário preferir: `whisper-1`, `verbose_json`, `timestamp_granularities[]=word`, idioma certo, com a chave que ele der, **só por variável de ambiente**, nunca salva.
+  - Nos dois: palavras rápidas às vezes vêm no mesmo tempo (espalhe à mão), números podem vir normalizados ("300 reais" → "R$ 300") e palavras mal ouvidas aparecem ("egas" no lugar de "regras"): corrija pelo que foi falado.
 - Os textos na tela seguem **o que foi falado**. Avise quando diferirem do roteiro escrito.
 
 ## Animação (`video.html`)
